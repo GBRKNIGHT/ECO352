@@ -1,0 +1,248 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>hw2Problem1</title><meta name="generator" content="MATLAB 9.12"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-10-28"><meta name="DC.source" content="hw2Problem1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="comment">% % This is the part for Problem 1</span>
+<span class="comment">% % % % This is the part for problem1 subquestion 1</span>
+
+
+x1 = -10:.01:10;
+sigmoid(x1)
+plot(x,sig_function);
+grid <span class="string">on</span>
+<span class="comment">% plot(costFunction (0.5, 10, 20));</span>
+
+
+<span class="comment">% parts for running routines for subquestion 3.</span>
+functionExample = @cos;
+x2 = fminbnd( functionExample, 0 ,10);
+disp(x2)
+x3 = fminsearch(functionExample,0);
+disp(x3)
+
+
+<span class="comment">% % % % The sigmoid method (require extra package "Deep Learning Toolbox")</span>
+<span class="comment">% % % % Following instructions from slides, and the mathworks instructions</span>
+<span class="comment">% % % % https://www.mathworks.com/matlabcentral/fileexc</span>
+<span class="comment">% hange/51007-sigmoid?focused=3876707&amp;s_tid=gn_loc_drop&amp;tab=example</span>
+
+<span class="keyword">function</span> sigmoid(x)
+sig_function = 1./(1+exp(-x));
+plot(x,sig_function);
+<span class="keyword">end</span>
+
+
+<span class="comment">% cost function for the log regression</span>
+<span class="comment">% sig = 1./(1 + (exp(-(X * theta))))</span>
+<span class="keyword">function</span> [J, grad] = costFunction(theta, X, y)
+hx = sigmoid(X * theta);
+m = length(X);
+
+J = (-y' * log(hx) - (1 - y')*log(1 - hx)) / m;
+grad = X' * (hx - y) / m;
+
+<span class="keyword">end</span>
+
+<span class="comment">%Hypothesis function for the log regression.</span>
+<span class="comment">% if the sigmoid &gt; 0.5, accept, otherwise, reject.</span>
+
+<span class="keyword">function</span> hypoSig(x)
+    <span class="keyword">if</span> sigmoid (x) &gt; 0.5
+        outs = true;
+    <span class="keyword">end</span>
+        outs = false;
+<span class="keyword">end</span>
+
+
+
+<span class="comment">% % % % This is the part for problem1 subquestion 2</span>
+<span class="comment">% Find the solution to the classification problem by writing your own</span>
+<span class="comment">% gradient descent method.</span>
+<span class="comment">% The slide claimed that "The gradient descent method is the same for both</span>
+<span class="comment">% linear and logistic regressions!"</span>
+<span class="comment">%  following instructions provided previously</span>
+
+<span class="keyword">function</span> gra_dec(Gamma, max_iter, func_tol)
+<span class="comment">% iteration part</span>
+iter = 1;         <span class="comment">% iterations counter</span>
+x = [0; 0; 0];    <span class="comment">% initial guess</span>
+fvals(iter) = F(x);
+progress(iter, x);
+<span class="keyword">while</span> iter &lt; max_iter &amp;&amp; fvals(end) &gt; func_tol
+    iter = iter + 1;
+    x = x - Gamma * dF(x);  <span class="comment">% gradient descent</span>
+    fvals(iter) = F(x);     <span class="comment">% evaluate objective function</span>
+    progress(iter, x);      <span class="comment">% show progress</span>
+<span class="keyword">end</span>
+<span class="comment">% plot part</span>
+plot(1:iter, fvals, <span class="string">'LineWidth'</span>,2); grid <span class="string">on</span>;
+title(<span class="string">'Objective Function'</span>); xlabel(<span class="string">'Iteration'</span>); ylabel(<span class="string">'F(x)'</span>);
+<span class="keyword">end</span>
+
+
+<span class="comment">% % % % This is the part for problem1 subquestion 2</span>
+<span class="comment">% Find the solution to the classification problem by using MATLAB</span>
+<span class="comment">% optimization routines. Did you reproduce we saw in class?</span>
+</pre><pre class="codeoutput">    3.1416
+
+    3.1416
+
+</pre><img vspace="5" hspace="5" src="hw2Problem1_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2022a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+% % This is the part for Problem 1
+% % % % This is the part for problem1 subquestion 1
+
+
+x1 = -10:.01:10;
+sigmoid(x1)
+plot(x,sig_function);
+grid on
+% plot(costFunction (0.5, 10, 20));
+
+
+% parts for running routines for subquestion 3. 
+functionExample = @cos;
+x2 = fminbnd( functionExample, 0 ,10);
+disp(x2)
+x3 = fminsearch(functionExample,0);
+disp(x3)
+
+
+% % % % The sigmoid method (require extra package "Deep Learning Toolbox")
+% % % % Following instructions from slides, and the mathworks instructions
+% % % % https://www.mathworks.com/matlabcentral/fileexc
+% hange/51007-sigmoid?focused=3876707&s_tid=gn_loc_drop&tab=example
+
+function sigmoid(x)
+sig_function = 1./(1+exp(-x));
+plot(x,sig_function);
+end
+
+
+% cost function for the log regression
+% sig = 1./(1 + (exp(-(X * theta))))
+function [J, grad] = costFunction(theta, X, y)
+hx = sigmoid(X * theta);
+m = length(X);
+
+J = (-y' * log(hx) - (1 - y')*log(1 - hx)) / m;
+grad = X' * (hx - y) / m;
+
+end
+
+%Hypothesis function for the log regression.
+% if the sigmoid > 0.5, accept, otherwise, reject.
+
+function hypoSig(x)
+    if sigmoid (x) > 0.5
+        outs = true;
+    end
+        outs = false;
+end
+
+
+
+% % % % This is the part for problem1 subquestion 2
+% Find the solution to the classification problem by writing your own
+% gradient descent method. 
+% The slide claimed that "The gradient descent method is the same for both 
+% linear and logistic regressions!" 
+%  following instructions provided previously
+
+function gra_dec(Gamma, max_iter, func_tol)
+% iteration part
+iter = 1;         % iterations counter
+x = [0; 0; 0];    % initial guess
+fvals(iter) = F(x);
+progress(iter, x);
+while iter < max_iter && fvals(end) > func_tol
+    iter = iter + 1;
+    x = x - Gamma * dF(x);  % gradient descent
+    fvals(iter) = F(x);     % evaluate objective function
+    progress(iter, x);      % show progress
+end
+% plot part
+plot(1:iter, fvals, 'LineWidth',2); grid on;
+title('Objective Function'); xlabel('Iteration'); ylabel('F(x)');
+end
+
+
+% % % % This is the part for problem1 subquestion 2
+% Find the solution to the classification problem by using MATLAB 
+% optimization routines. Did you reproduce we saw in class?
+
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
